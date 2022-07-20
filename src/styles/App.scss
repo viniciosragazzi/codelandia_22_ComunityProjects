@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #873eff;
+  --green: #04d361;
+
+  --dark: #0e091b;
+  --dark-200: #171228;
+  --gray: #aeaeae;
+  --light: #f9f9f9;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--dark);
+  a {
+    text-decoration: none;
+    color: var(--light);
+  }
+  .container {
+    width: 100%;
+    max-width: 122.8rem;
+    padding: 0 5rem;
+  }
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--light);
+      font-family: "DM Sans", sans-serif;
+      .logoArea {
+        width: min(180px, 50vw);
+        height: auto;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .menuArea {
+        ul {
+          display: flex;
+          list-style-type: none;
+          text-transform: uppercase;
+          gap: 6rem;
+          font-size: 1.5rem;
+          align-items: center;
+          li {
+            &:last-child {
+              padding: 2rem 3rem;
+              border: #873eff 1px solid;
+              border-radius: 0.6rem;
+              transition: 0.2s all ease-in-out;
+              &:hover {
+                background-color: #873eff;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  main {
+    section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      font-family: "IBM Plex Mono", monospace;
+      padding: 10rem 1rem;
+      &.sectionText {
+        .container {
+          color: white;
+          .text {
+            width: 100%;
+            max-width: 81rem;
+            display: grid;
+            gap: 3rem;
+            h2 {
+              font-size: min(2.4rem, 4vw);
+              font-weight: 700;
+              color: var(--green);
+              text-transform: uppercase;
+            }
+            h1 {
+              color: var(--light);
+              font-size: min(6.4rem, 6vw);
+              font-weight: 600;
+            }
+            p {
+              font-size: min(2.4rem, 4vw);
+              font-weight: 500;
+              color: var(--gray);
+              font-family: "DM Sans", sans-serif;
+              line-height: 170%;
+            }
+          }
+        }
+      }
+      &.cards {
+        .container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2.6rem;
+          .card {
+            width: 100%;
+            height: 50rem;
+            background-color: var(--dark-200);
+            display: flex;
+            flex-direction: column;
+            gap: 2.6rem;
+            padding: 2.3rem;
+            border-radius: 0.8rem;
+            .card-image {
+              width: 100%;
+              height: 22rem;
+              background-color: var(--dark);
+              border-radius: 0.6rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .title {
+              font-size: 2.4rem;
+              font-weight: 500;
+              font-family: "IBM Plex Mono", monospace;
+              line-height: 3.1rem;
+              color: var(--light);
+            }
+            .description {
+              font-size: 1.6rem;
+              font-weight: 500;
+              font-family: "DM Sans", sans-serif;
+              line-height: 3rem;
+              color: var(--gray);
+            }
+            .btnsArea {
+              display: flex;
+              gap: 2.4rem;
+              padding-top: 2.4rem;
+              a {
+                font-family: "DM Sans", sans-serif;
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 2rem;
+                padding: 1rem 6rem;
+                text-transform: uppercase;
+                transition: 0.2s all ease-in-out;
+                border-radius: 0.6rem;
+                display: flex;
+                align-items: center;
+                &:first-child {
+                  background-color: var(--green);
+                  color: var(--dark);
+
+                  &:hover {
+                    background-color: var(--purple);
+                    cursor: pointer;
+                    color: var(--light);
+                  }
+                }
+                &:last-child {
+                  border: 1px solid var(--green);
+                  color: var(--light);
+
+                  &:hover {
+                    border: 1px solid var(--purple);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      font-family: "IBM Plex Mono", monospace;
+      padding: 6rem 1rem;
+      .text {
+        color: var(--gray);
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 55.5%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  html {
+    font-size: 45.5%;
+  }
+  .container {
+    padding: 0 2rem !important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  body main section.cards .container {
+    max-width: 60rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  body header .container {
+    flex-direction: column;
+    gap: 4.8rem;
+    .menuArea {
+      width: 100%;
+      ul {
+        li {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  body header .container .menuArea ul {
+    li {
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+  body main section.cards .container .card {
+    padding: 1.3rem;
+  }
+  body main section {
+    padding: 2rem 1rem;
+  }
+  body footer .container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 10rem 0 !important;
+    margin-bottom: 10rem;
+    img{
+      width: 3.5rem;
+    }
+  }
+}
