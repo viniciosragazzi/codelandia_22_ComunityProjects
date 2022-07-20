@@ -118,6 +118,7 @@ body main section.cards .container .card {
   gap: 2.6rem;
   padding: 2.3rem;
   border-radius: 0.8rem;
+  border: var(--purple) 1px solid;
 }
 body main section.cards .container .card .card-image {
   width: 100%;
@@ -232,7 +233,7 @@ body footer .container .text {
     padding: 1.3rem;
   }
   body main section {
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
   }
   body footer .container {
     flex-direction: column;
